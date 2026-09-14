@@ -1,0 +1,30 @@
+Sanoj P V
+sanoj@student.edu | +91 9876543210 | Bangalore, India
+linkedin.com/in/sanoj-pv | github.com/sanojpv
+
+EDUCATION
+Bachelor of Technology in Computer Science & Engineering (B.Tech)
+Apex Institute of Technology, 2022 - 2026
+CGPA: 8.7 / 10
+
+TECHNICAL SKILLS
+- Programming Languages: Python, JavaScript, TypeScript, SQL, HTML5, CSS3
+- Frontend: React, Redux, Tailwind CSS, Bootstrap
+- Backend & Databases: Node.js, Express, MySQL, MongoDB, REST API
+- Cloud & Tools: Docker, Git, GitHub, Linux, Postman
+
+PROJECTS
+AI Placement Readiness & Resume Screening Platform
+- Architected and deployed full-stack web application using React, PHP, and Python NLP microservices, accelerating candidate screening by 70% for 500+ campus students.
+- Implemented Google XYZ bullet-point optimizer and dynamic interview question generator leveraging semantic NLP algorithms.
+- Configured normalized MySQL database schemas with indexing, reducing API query latency by 40%.
+
+E-Commerce Web Portal with Real-Time Inventory
+- Built responsive user interface using React and Redux, increasing mobile checkout completion by 35%.
+- Engineered Node.js and Express backend with JWT token authentication and Stripe payment integration.
+- Automated continuous integration and deployment testing via GitHub Actions.
+
+EXPERIENCE
+Software Engineering Intern - Web Solutions Ltd (Summer 2025)
+- Collaborated with senior engineers to refactor legacy REST APIs, reducing payload sizes by 25%.
+- Developed reusable UI component library using React and Tailwind CSS.
