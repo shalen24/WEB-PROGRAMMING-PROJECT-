@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = trim($_POST['name'] ?? '');
     $email = trim($_POST['email'] ?? '');
     $password = $_POST['password'] ?? '';
-    $role = $_POST['role'] ?? 'student';
+    $role = 'student';
     $department = trim($_POST['department'] ?? 'Computer Science');
     $college = trim($_POST['college'] ?? 'Engineering College');
     $grad_year = intval($_POST['graduation_year'] ?? 2026);
@@ -80,10 +80,8 @@ require_once __DIR__ . '/includes/navbar.php';
                         </div>
                         <div class="col-md-6">
                             <label class="form-label fw-semibold">Account Role *</label>
-                            <select name="role" class="form-select">
-                                <option value="student" selected>Student / Candidate</option>
-                                <option value="recruiter">Recruiter / Placement Cell</option>
-                            </select>
+                            <input type="text" class="form-control" value="Student / Candidate" disabled>
+                            <input type="hidden" name="role" value="student">
                         </div>
                     </div>
 

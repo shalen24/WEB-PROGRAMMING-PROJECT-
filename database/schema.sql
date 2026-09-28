@@ -131,8 +131,7 @@ CREATE TABLE `job_shortlists` (
 
 -- Pre-hashed password for 'password123' using BCRYPT
 INSERT INTO `users` (`id`, `name`, `email`, `password_hash`, `role`, `department`, `college`, `graduation_year`) VALUES
-(1, 'Admin Officer (TPO)', 'admin@placement.edu', '$2y$10$w0yGz0qZ7R8YtK8K8p0q0.342l8Y3dG9F0eI1tK2l3m4n5o6p7q8r', 'admin', 'Placement Cell', 'Apex Institute of Technology', 2026),
-(2, 'TechCorp Recruiter', 'recruiter@techcorp.com', '$2y$10$w0yGz0qZ7R8YtK8K8p0q0.342l8Y3dG9F0eI1tK2l3m4n5o6p7q8r', 'recruiter', 'Talent Acquisition', 'TechCorp Solutions', 2026),
+(2, 'System Recruiter (Virtual)', 'recruiter@techcorp.com', '$2y$10$w0yGz0qZ7R8YtK8K8p0q0.342l8Y3dG9F0eI1tK2l3m4n5o6p7q8r', 'recruiter', 'Talent Acquisition', 'Virtual Tech Solutions', 2026),
 (3, 'Sanoj P V', 'sanoj@student.edu', '$2y$10$w0yGz0qZ7R8YtK8K8p0q0.342l8Y3dG9F0eI1tK2l3m4n5o6p7q8r', 'student', 'Computer Science & Engineering', 'Apex Institute of Technology', 2026),
 (4, 'Shalen Ann Regi', 'shalen@student.edu', '$2y$10$w0yGz0qZ7R8YtK8K8p0q0.342l8Y3dG9F0eI1tK2l3m4n5o6p7q8r', 'student', 'Information Technology', 'Apex Institute of Technology', 2026),
 (5, 'Shifa Usman', 'shifa@student.edu', '$2y$10$w0yGz0qZ7R8YtK8K8p0q0.342l8Y3dG9F0eI1tK2l3m4n5o6p7q8r', 'student', 'Computer Science & Engineering', 'Apex Institute of Technology', 2026);

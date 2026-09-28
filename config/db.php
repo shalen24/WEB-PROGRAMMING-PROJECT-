@@ -14,7 +14,8 @@ define('MYSQL_PASS', ''); // Set your MySQL password if configured
 
 $pdo = null;
 
-function getDB() {
+function getDB()
+{
     global $pdo;
     if ($pdo !== null) {
         return $pdo;
@@ -58,7 +59,8 @@ function getDB() {
     return $pdo;
 }
 
-function initializeSqliteDatabase($db) {
+function initializeSqliteDatabase($db)
+{
     // 1. Users
     $db->exec("CREATE TABLE IF NOT EXISTS users (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -170,8 +172,7 @@ function initializeSqliteDatabase($db) {
     // Seed default initial users (password: 'password123')
     $passHash = password_hash('password123', PASSWORD_BCRYPT);
     $stmt = $db->prepare("INSERT INTO users (name, email, password_hash, role, department, college, graduation_year) VALUES (?, ?, ?, ?, ?, ?, ?)");
-    $stmt->execute(['Admin Officer (TPO)', 'admin@placement.edu', $passHash, 'admin', 'Placement Cell', 'Apex Institute of Technology', 2026]);
-    $stmt->execute(['TechCorp Recruiter', 'recruiter@techcorp.com', $passHash, 'recruiter', 'Talent Acquisition', 'TechCorp Solutions', 2026]);
+    $stmt->execute(['System Recruiter (Virtual)', 'recruiter@techcorp.com', $passHash, 'recruiter', 'Talent Acquisition', 'Virtual Tech Solutions', 2026]);
     $stmt->execute(['Sanoj P V', 'sanoj@student.edu', $passHash, 'student', 'Computer Science & Engineering', 'Apex Institute of Technology', 2026]);
     $stmt->execute(['Shalen Ann Regi', 'shalen@student.edu', $passHash, 'student', 'Information Technology', 'Apex Institute of Technology', 2026]);
     $stmt->execute(['Shifa Usman', 'shifa@student.edu', $passHash, 'student', 'Computer Science & Engineering', 'Apex Institute of Technology', 2026]);

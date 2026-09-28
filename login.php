@@ -5,8 +5,7 @@ require_once __DIR__ . '/includes/auth_check.php';
 $pageTitle = "Sign In";
 
 if (isLoggedIn()) {
-    $role = $_SESSION['user_role'] ?? 'student';
-    header("Location: " . ($role === 'recruiter' ? 'recruiter/dashboard.php' : ($role === 'admin' ? 'admin/dashboard.php' : 'student/dashboard.php')));
+    header("Location: student/dashboard.php");
     exit();
 }
 
@@ -30,14 +29,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['user_role'] = $user['role'];
             $_SESSION['user_department'] = $user['department'] ?? '';
 
-            if ($user['role'] === 'recruiter') {
-                header("Location: recruiter/dashboard.php");
-            } elseif ($user['role'] === 'admin') {
-                header("Location: admin/dashboard.php");
-            } else {
+            if ($user['role'] === 'student') {
                 header("Location: student/dashboard.php");
+                exit();
+            } else {
+                $error = "This account type is no longer supported.";
             }
-            exit();
         } else {
             $error = "Invalid email or password. Please try again.";
         }
@@ -96,13 +93,7 @@ require_once __DIR__ . '/includes/navbar.php';
                     <p class="text-muted small fw-semibold text-center mb-2">⚡ Quick 1-Click Demo Logins for Evaluation:</p>
                     <div class="d-flex flex-wrap gap-2 justify-content-center">
                         <button type="button" class="btn btn-sm btn-outline-primary" onclick="fillDemo('sanoj@student.edu', 'password123')">
-                            <i class="fa-solid fa-user-graduate me-1"></i> Student
-                        </button>
-                        <button type="button" class="btn btn-sm btn-outline-success" onclick="fillDemo('recruiter@techcorp.com', 'password123')">
-                            <i class="fa-solid fa-building me-1"></i> Recruiter
-                        </button>
-                        <button type="button" class="btn btn-sm btn-outline-danger" onclick="fillDemo('admin@placement.edu', 'password123')">
-                            <i class="fa-solid fa-user-shield me-1"></i> Admin / TPO
+                            <i class="fa-solid fa-user-graduate me-1"></i> Demo Student
                         </button>
                     </div>
                 </div>

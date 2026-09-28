@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/../config/db.php';
 require_once __DIR__ . '/../includes/auth_check.php';
-requireRole(['student', 'admin']);
+requireRole();
 
 $user = getCurrentUser();
 $pageTitle = "Student Dashboard";

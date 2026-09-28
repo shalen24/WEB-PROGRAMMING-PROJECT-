@@ -8,11 +8,13 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-function isLoggedIn() {
+function isLoggedIn()
+{
     return isset($_SESSION['user_id']) && !empty($_SESSION['user_id']);
 }
 
-function getCurrentUser() {
+function getCurrentUser()
+{
     if (!isLoggedIn()) {
         return null;
     }
@@ -25,7 +27,8 @@ function getCurrentUser() {
     ];
 }
 
-function requireLogin($redirect = '../login.php') {
+function requireLogin($redirect = '../login.php')
+{
     if (!isLoggedIn()) {
         $_SESSION['flash_error'] = 'Please log in to access this page.';
         header("Location: $redirect");
@@ -33,21 +36,18 @@ function requireLogin($redirect = '../login.php') {
     }
 }
 
-function requireRole($allowedRoles, $redirect = '../index.php') {
+function requireRole($allowedRoles = null, $redirect = '../index.php')
+{
     requireLogin();
-    $roles = is_array($allowedRoles) ? $allowedRoles : [$allowedRoles];
-    if (!in_array($_SESSION['user_role'], $roles)) {
-        $_SESSION['flash_error'] = 'Unauthorized access: You do not have permission to view that resource.';
-        header("Location: $redirect");
-        exit();
-    }
 }
 
-function flashMessage($type, $message) {
+function flashMessage($type, $message)
+{
     $_SESSION['flash_' . $type] = $message;
 }
 
-function displayFlash() {
+function displayFlash()
+{
     $types = ['success' => 'success', 'error' => 'danger', 'warning' => 'warning', 'info' => 'info'];
     foreach ($types as $key => $bsClass) {
         $sessionKey = 'flash_' . $key;

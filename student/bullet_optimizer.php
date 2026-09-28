@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/../config/db.php';
 require_once __DIR__ . '/../includes/auth_check.php';
-requireRole(['student', 'recruiter', 'admin']);
+requireRole();
 
 $pageTitle = "Google XYZ Bullet-Point Optimizer";
 require_once __DIR__ . '/../includes/header.php';

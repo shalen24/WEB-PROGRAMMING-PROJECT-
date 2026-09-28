@@ -2,7 +2,7 @@
 require_once __DIR__ . '/../config/db.php';
 require_once __DIR__ . '/../config/api.php';
 require_once __DIR__ . '/../includes/auth_check.php';
-requireRole(['student', 'recruiter', 'admin']);
+requireRole();
 
 $user = getCurrentUser();
 $pageTitle = "Skill Gap Learning Roadmap";
